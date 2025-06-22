@@ -28,3 +28,7 @@ mongoose
   .catch((err) => {
     console.error("❌ MongoDB connection error:", err);
   });
+
+  app.get('/', (req, res) => {
+  res.send('✅ Backend is running!');
+});
