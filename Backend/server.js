@@ -13,7 +13,7 @@ const transactionRoutes = require("./routes/transactionRoutes");
 app.use("/api/transactions", transactionRoutes);
 
 // Environment Variables
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 // Connect to MongoDB
@@ -29,6 +29,6 @@ mongoose
     console.error("❌ MongoDB connection error:", err);
   });
 
-  app.get('/', (req, res) => {
-  res.send('✅ Backend is running!');
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running!");
 });
