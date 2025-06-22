@@ -12,11 +12,16 @@ app.use(express.json());
 const transactionRoutes = require("./routes/transactionRoutes");
 app.use("/api/transactions", transactionRoutes);
 
+// Test Route
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running!");
+});
+
 // Environment Variables
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
-// Connect to MongoDB
+// MongoDB Connection
 mongoose
   .connect(MONGO_URI)
   .then(() => {
