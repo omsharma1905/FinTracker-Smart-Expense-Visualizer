@@ -1,0 +1,11 @@
+# Node
+Backend/node_modules/
+Backend/.env
+
+# React
+Frontend/node_modules/
+Frontend/.env
+
+# System
+.DS_Store
+Thumbs.db
