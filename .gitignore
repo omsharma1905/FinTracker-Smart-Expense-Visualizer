@@ -1,12 +1,10 @@
-# Node
+# Node or Backend
 Backend/node_modules/
 Backend/.env
 
-
-# React
+# React or Frontend
 Frontend/node_modules/
 Frontend/.env
-
 
 # System
 .DS_Store
