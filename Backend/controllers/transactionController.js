@@ -1,6 +1,5 @@
 const Transaction = require('../models/transactionModel');
 
-// Create
 exports.createTransaction = async (req, res) => {
   try {
     const transaction = new Transaction(req.body);
@@ -11,7 +10,6 @@ exports.createTransaction = async (req, res) => {
   }
 };
 
-// Read all
 exports.getAllTransactions = async (req, res) => {
   try {
     const transactions = await Transaction.find();
@@ -21,7 +19,6 @@ exports.getAllTransactions = async (req, res) => {
   }
 };
 
-// Read one
 exports.getTransactionById = async (req, res) => {
   try {
     const transaction = await Transaction.findById(req.params.id);
@@ -32,7 +29,6 @@ exports.getTransactionById = async (req, res) => {
   }
 };
 
-// Update
 exports.updateTransaction = async (req, res) => {
   try {
     const updated = await Transaction.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -42,7 +38,6 @@ exports.updateTransaction = async (req, res) => {
   }
 };
 
-// Delete
 exports.deleteTransaction = async (req, res) => {
   try {
     await Transaction.findByIdAndDelete(req.params.id);
