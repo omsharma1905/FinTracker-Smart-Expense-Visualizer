@@ -1,4 +1,4 @@
-require("dotenv").config(); // Load variables from .env
+require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -8,20 +8,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
 const transactionRoutes = require("./routes/transactionRoutes");
 app.use("/api/transactions", transactionRoutes);
 
-// Test Route
 app.get("/", (req, res) => {
   res.send("✅ Backend is running!");
 });
 
-// Environment Variables
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
-// MongoDB Connection
 mongoose
   .connect(MONGO_URI)
   .then(() => {
